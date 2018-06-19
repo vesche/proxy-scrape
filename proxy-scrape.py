@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#
-# proxyscrape.py
-# https://github.com/vesche
-#
+"""
+proxyscrape.py: scrapin' proxies with ocr
+https://github.com/vesche
+"""
 
 import bs4
+import os
 import pytesseract
 import requests
 import subprocess
@@ -19,14 +20,14 @@ PROXY_LOC = '/en/proxy-list'
 
 
 def process_image(img):
+    """Uses ImageMagick to resize an image to 200% size."""
     img.save('/tmp/tmp_img1.png')
     command = 'convert /tmp/tmp_img1.png -resize 200% /tmp/tmp_img2.png'
     subprocess.call(command.split())
+    
     img = Image.open('/tmp/tmp_img2.png')
-
-    cleanup = 'rm /tmp/tmp_img1.png /tmp/tmp_img2.png'
-    subprocess.call(cleanup.split())
-
+    os.remove('/tmp/tmp_img1.png')
+    os.remove('/tmp/tmp_img2.png')
     return img
 
 
