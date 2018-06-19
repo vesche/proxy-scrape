@@ -1,5 +1,7 @@
 # proxy-scrape
 
+*The TorVPN proxy list is no longer populating as of July 2018, therefore this tool is defunct. If you're looking for a decent free proxy list, check out [a2u/free-proxy-list](https://github.com/a2u/free-proxy-list).*
+
 This is a command-line tool to scrape the [TorVPN proxy list](https://www.torvpn.com/en/proxy-list) for use with [proxychains](https://github.com/haad/proxychains). TorVPN's proxy list uses images to list IP addresses (likely to avoid scrapers), this tool uses [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) via the [pytesseract](https://github.com/madmaze/pytesseract) wrapper for [optical character recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) and [ImageMagick](https://www.imagemagick.org/script/index.php) for image manipulation.
 
 ## Install
